@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8E-eB-cIA">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="HCI-s2-RVd">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="B8E-eB-cIA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="06R-oR-c67">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cvV-Ai-mgT" kind="relationship" relationship="rootViewController" id="8Ip-GH-hJo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yhz-Yr-wRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-92" y="31"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="Oic-SW-5MK">
+            <objects>
+                <viewController id="cvV-Ai-mgT" customClass="MainViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fcJ-x5-cBC">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="main_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="LYB-7f-DWM"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTN-O4-yFq">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="53u-DL-Xs9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Send Now">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="kg0-ta-6vw" kind="push" id="ide-TA-Oox"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YTN-O4-yFq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Fj7-cB-WsX"/>
+                            <constraint firstItem="LYB-7f-DWM" firstAttribute="top" secondItem="fcJ-x5-cBC" secondAttribute="top" type="default" id="HmL-ZI-cDe"/>
+                            <constraint firstItem="YTN-O4-yFq" firstAttribute="leading" secondItem="fcJ-x5-cBC" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ICN-Vi-DPe"/>
+                            <constraint firstItem="LYB-7f-DWM" firstAttribute="leading" secondItem="fcJ-x5-cBC" secondAttribute="leading" type="default" id="IGm-sw-v0A"/>
+                            <constraint firstAttribute="bottom" secondItem="YTN-O4-yFq" secondAttribute="bottom" constant="40" id="Sb6-KF-6TT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="O8A-er-fE0"/>
+                    <connections>
+                        <outlet property="sendNowButton" destination="YTN-O4-yFq" id="vnd-Hy-5Mw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ukE-mT-m5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="319" y="31"/>
+        </scene>
+        <!--Tweet View Controller - Social-->
+        <scene sceneID="hs9-wZ-cg9">
+            <objects>
+                <viewController id="eUA-uG-pX3" customClass="TweetViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mch-mN-zAy">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBq-qp-2oh">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aBq-qp-2oh" firstAttribute="top" secondItem="Mch-mN-zAy" secondAttribute="top" type="default" id="JSG-T4-y4g"/>
+                            <constraint firstItem="aBq-qp-2oh" firstAttribute="trailing" secondItem="Mch-mN-zAy" secondAttribute="trailing" type="default" id="a7R-8e-ctS"/>
+                            <constraint firstItem="aBq-qp-2oh" firstAttribute="leading" secondItem="Mch-mN-zAy" secondAttribute="leading" type="default" id="kcu-9o-lK4"/>
+                            <constraint firstItem="aBq-qp-2oh" firstAttribute="bottom" secondItem="Mch-mN-zAy" secondAttribute="bottom" type="default" id="uBt-2l-sP8"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Social" id="aKx-G1-mZq"/>
+                    <connections>
+                        <outlet property="webView" destination="aBq-qp-2oh" id="hz0-34-j49"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F7h-ia-VQ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1272" y="357"/>
+        </scene>
+        <!--Purchase View Controller - Flowers!-->
+        <scene sceneID="NZy-KC-Dmd">
+            <objects>
+                <viewController id="USB-fB-IUV" customClass="PurchaseViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VWR-oB-pOp">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahn-UJ-eY1">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Get some flowers!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOi-Uh-olA">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="172" id="ZR6-4x-m9Q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="140" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="NU9-9d-Ntb">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="406" id="NnF-HP-KEF"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="flower_cell" rowHeight="140" id="CQi-Sa-MmX" customClass="FlowerTableViewCell">
+                                                <rect key="frame" x="0.0" y="22" width="320" height="140"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bG-fR-gcN">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="80" id="Qvj-ZM-H9k"/>
+                                                                <constraint firstAttribute="height" constant="120" id="a1q-Sl-Aqt"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flower name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="txs-Ky-lgF">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="156" id="09F-GW-yY7"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSu-Qd-7Wp">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="62" id="IUD-hm-4Bb"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="txs-Ky-lgF" firstAttribute="leading" secondItem="3bG-fR-gcN" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="9gg-r1-Ikt"/>
+                                                    <constraint firstItem="txs-Ky-lgF" firstAttribute="top" secondItem="CQi-Sa-MmX" secondAttribute="top" constant="59" id="Td4-9T-rtF"/>
+                                                    <constraint firstItem="3bG-fR-gcN" firstAttribute="centerY" secondItem="CQi-Sa-MmX" secondAttribute="centerY" type="default" id="UnC-Lr-POD"/>
+                                                    <constraint firstItem="3bG-fR-gcN" firstAttribute="leading" secondItem="CQi-Sa-MmX" secondAttribute="leading" constant="12" id="YWh-Sv-Rh7"/>
+                                                    <constraint firstItem="jSu-Qd-7Wp" firstAttribute="baseline" secondItem="txs-Ky-lgF" secondAttribute="baseline" type="default" id="iIm-9f-S1b"/>
+                                                    <constraint firstAttribute="trailing" secondItem="jSu-Qd-7Wp" secondAttribute="trailing" constant="6" id="roK-9q-8zE"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="flowerImageView" destination="3bG-fR-gcN" id="f8u-1C-lsz"/>
+                                                    <outlet property="flowerTitleLabel" destination="txs-Ky-lgF" id="fb9-0X-fc0"/>
+                                                    <outlet property="priceLabel" destination="jSu-Qd-7Wp" id="b2W-xS-eCk"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="USB-fB-IUV" id="BKG-sZ-zNh"/>
+                                            <outlet property="delegate" destination="USB-fB-IUV" id="4Qw-0o-oUe"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="NU9-9d-Ntb" firstAttribute="centerX" secondItem="AOi-Uh-olA" secondAttribute="centerX" type="default" id="7Vl-es-ZF6"/>
+                                    <constraint firstItem="NU9-9d-Ntb" firstAttribute="top" secondItem="AOi-Uh-olA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="AfJ-39-JvJ"/>
+                                    <constraint firstItem="AOi-Uh-olA" firstAttribute="top" secondItem="ahn-UJ-eY1" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Lif-XN-8Hz"/>
+                                    <constraint firstItem="NU9-9d-Ntb" firstAttribute="centerX" secondItem="ahn-UJ-eY1" secondAttribute="centerX" type="default" id="THZ-6i-xlx"/>
+                                    <constraint firstItem="NU9-9d-Ntb" firstAttribute="leading" secondItem="ahn-UJ-eY1" secondAttribute="leading" type="default" id="Vl9-x1-aLL"/>
+                                    <constraint firstItem="NU9-9d-Ntb" firstAttribute="bottom" secondItem="ahn-UJ-eY1" secondAttribute="bottom" type="default" id="b21-7a-JUz"/>
+                                    <constraint firstItem="NU9-9d-Ntb" firstAttribute="trailing" secondItem="ahn-UJ-eY1" secondAttribute="trailing" type="default" id="pYR-nD-gcc"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ahn-UJ-eY1" firstAttribute="centerY" secondItem="VWR-oB-pOp" secondAttribute="centerY" type="default" id="atR-ho-dAC"/>
+                            <constraint firstItem="ahn-UJ-eY1" firstAttribute="leading" secondItem="VWR-oB-pOp" secondAttribute="leading" type="default" id="dF5-n5-mYl"/>
+                            <constraint firstItem="ahn-UJ-eY1" firstAttribute="top" secondItem="VWR-oB-pOp" secondAttribute="top" constant="3" id="rOd-dM-iOr"/>
+                            <constraint firstItem="ahn-UJ-eY1" firstAttribute="trailing" secondItem="VWR-oB-pOp" secondAttribute="trailing" type="default" id="uh3-ZY-XLx"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Flowers!" id="XDH-Fm-tWs"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="flowerTableView" destination="NU9-9d-Ntb" id="rSq-iz-I6m"/>
+                        <outlet property="greetingLabel" destination="AOi-Uh-olA" id="hyy-i9-48e"/>
+                        <outlet property="scrollView" destination="ahn-UJ-eY1" id="Xf1-uz-EGF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgH-bt-ekb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1272" y="-296"/>
+        </scene>
+        <!--Purchase Modal View Controller-->
+        <scene sceneID="TJa-Ma-btx">
+            <objects>
+                <viewController storyboardIdentifier="purchaseModalVC" id="ZNd-3z-Dpf" customClass="PurchaseModalViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nDk-xi-slD">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbt-ry-GKo">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="188" id="118-NL-L12"/>
+                                    <constraint firstAttribute="width" constant="121" id="jaK-j3-AzR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tulip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LhG-mD-tpQ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="6a1-wb-Ogd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000000000000004" preferredMaxLayoutWidth="266" translatesAutoresizingMaskIntoConstraints="NO" id="JGe-0T-DLr">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="111" id="ei1-fH-KK4"/>
+                                    <constraint firstAttribute="width" constant="266" id="sgt-Xm-cPe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goq-1K-aC9">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="C9y-wO-33U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Add to Cart">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickAddToCartButton:" destination="ZNd-3z-Dpf" eventType="touchUpInside" id="OHc-gB-kBB"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="BloomThat-Hand-Deliver-120px.png" translatesAutoresizingMaskIntoConstraints="NO" id="SDe-Yd-qdX">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Ult-BF-3hL"/>
+                                    <constraint firstAttribute="height" constant="59" id="smt-bh-AVi"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="BloomThat-Guarantee-120px.png" translatesAutoresizingMaskIntoConstraints="NO" id="TB2-dA-8r0">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="1js-ve-xaJ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KM-4B-Dtk">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="TSD-cB-Fqf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Cancel :(">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickCancelButton:" destination="ZNd-3z-Dpf" eventType="touchUpInside" id="Z93-fV-k6F"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kbt-ry-GKo" firstAttribute="top" secondItem="LhG-mD-tpQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1bk-uS-icp"/>
+                            <constraint firstItem="goq-1K-aC9" firstAttribute="trailing" secondItem="JGe-0T-DLr" secondAttribute="trailing" type="default" id="4m2-sa-Y6n"/>
+                            <constraint firstItem="SDe-Yd-qdX" firstAttribute="top" secondItem="7KM-4B-Dtk" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="8ck-m0-DPS"/>
+                            <constraint firstItem="7KM-4B-Dtk" firstAttribute="top" secondItem="goq-1K-aC9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="B3M-RM-hve"/>
+                            <constraint firstItem="7KM-4B-Dtk" firstAttribute="trailing" secondItem="goq-1K-aC9" secondAttribute="trailing" type="default" id="Bs9-El-R2j"/>
+                            <constraint firstItem="LhG-mD-tpQ" firstAttribute="leading" secondItem="nDk-xi-slD" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="L8a-Pu-ahw"/>
+                            <constraint firstItem="kbt-ry-GKo" firstAttribute="centerX" secondItem="JGe-0T-DLr" secondAttribute="centerX" type="default" id="Lit-Ju-KbF"/>
+                            <constraint firstAttribute="trailing" secondItem="LhG-mD-tpQ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="MND-60-WfS"/>
+                            <constraint firstAttribute="bottom" secondItem="TB2-dA-8r0" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="N4W-JF-aGr"/>
+                            <constraint firstItem="SDe-Yd-qdX" firstAttribute="leading" secondItem="nDk-xi-slD" secondAttribute="leading" constant="50" id="SMp-W1-qIS"/>
+                            <constraint firstAttribute="trailing" secondItem="TB2-dA-8r0" secondAttribute="trailing" constant="54" id="TCh-8b-MiT"/>
+                            <constraint firstItem="kbt-ry-GKo" firstAttribute="centerX" secondItem="LhG-mD-tpQ" secondAttribute="centerX" type="default" id="W2x-nI-OVb"/>
+                            <constraint firstItem="7KM-4B-Dtk" firstAttribute="leading" secondItem="goq-1K-aC9" secondAttribute="leading" type="default" id="e9y-aH-zhr"/>
+                            <constraint firstItem="TB2-dA-8r0" firstAttribute="top" secondItem="7KM-4B-Dtk" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gAZ-MY-fSG"/>
+                            <constraint firstItem="JGe-0T-DLr" firstAttribute="top" secondItem="kbt-ry-GKo" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hZd-fu-FJX"/>
+                            <constraint firstItem="LhG-mD-tpQ" firstAttribute="top" secondItem="nDk-xi-slD" secondAttribute="top" constant="7" id="kzi-XS-Kem"/>
+                            <constraint firstAttribute="bottom" secondItem="SDe-Yd-qdX" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="mSY-6g-JJh"/>
+                            <constraint firstItem="goq-1K-aC9" firstAttribute="leading" secondItem="JGe-0T-DLr" secondAttribute="leading" type="default" id="uEe-kx-mK9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addToCartButton" destination="goq-1K-aC9" id="drE-c2-b3B"/>
+                        <outlet property="cancelButton" destination="7KM-4B-Dtk" id="sbb-hN-PSi"/>
+                        <outlet property="descriptionLabel" destination="JGe-0T-DLr" id="GgE-re-re7"/>
+                        <outlet property="flowerImageView" destination="kbt-ry-GKo" id="9Wj-Dj-KjT"/>
+                        <outlet property="titleLabel" destination="LhG-mD-tpQ" id="i6B-de-o1g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p2N-2u-cTA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1664" y="-296"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Aaf-Fx-QSt">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="kg0-ta-6vw" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="iUK-ed-Scx"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="BGN-hf-YRt">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="USB-fB-IUV" kind="relationship" relationship="viewControllers" id="V6C-U9-Edd"/>
+                        <segue destination="eUA-uG-pX3" kind="relationship" relationship="viewControllers" id="FHM-4S-ek1"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gh8-Er-JvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="738" y="31"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BloomThat-Guarantee-120px.png" width="120" height="120"/>
+        <image name="BloomThat-Hand-Deliver-120px.png" width="120" height="120"/>
+        <image name="main_background.png" width="320" height="568"/>
+    </resources>
+    <classes>
+        <class className="BloomViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BloomViewController.h"/>
+        </class>
+        <class className="FlowerTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlowerTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="flowerImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="flowerTitleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="BloomViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="sendNowButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PurchaseModalViewController" superclassName="BloomViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PurchaseModalViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clickAddToCartButton:"/>
+                <relationship kind="action" name="clickCancelButton:"/>
+                <relationship kind="outlet" name="addToCartButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="flowerImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PurchaseViewController" superclassName="BloomViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PurchaseViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="flowerTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="greetingLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="TweetViewController" superclassName="BloomViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TweetViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
